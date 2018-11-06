@@ -53,6 +53,19 @@ func sum1(numbers ... int) int {
 	return s
 }
 
+// 参数传递与简单的指针类型
+// golang参数都是按值传递, 如果需要修改变量,那么可以传递参数指针. 例子如下,交换两个变量值
+func swap(a, b *int) {
+	*a, *b = *b, *a // 指针对应值交换
+}
+
+// 另一种方式,交换返回,返回值
+func swap2(a, b int) (int, int) {
+	return b, a
+}
+
+// Cache类变量,作为参数时,因为本身存的就是指针类型,因此需要注意下
+
 // golang函数不支持默认参数..这个有点奇怪,然而人家 要求必须是显式调用的似乎也有些道理?
 /**
 要点:
@@ -79,4 +92,11 @@ func main() {
 	}, 3, 5))
 
 	fmt.Println(sum1(1, 2, 3, 4, 5, 6, 7))
+
+	a, b := 5, 6
+	swap(&a, &b) // &取地址
+	fmt.Println(a, b)
+	a, b = swap2(a, b)
+	fmt.Println(a, b)
+
 }
