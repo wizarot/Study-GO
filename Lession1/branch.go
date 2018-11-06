@@ -78,7 +78,7 @@ func main() {
 		grade(80),
 		grade(90),
 		grade(100),
-		grade(101),
+		//grade(101),// 异常数据
 		)
 
 }
