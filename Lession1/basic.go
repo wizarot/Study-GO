@@ -9,7 +9,7 @@ import (
 // 包内部变量
 var a = 10
 var b = "aaa"
-//c := 1000 // 外面不能这样定义! 错误方式
+// c := 1000 // 外面不能这样定义! 错误方式
 var (
 	c = 10
 	d = 30
@@ -31,7 +31,7 @@ func variableInitialValue() {
 
 // 变量类型推断
 func variableTypeDeduction() {
-	var a, b, c, s = 4, 5, true, "deftt" //自动判断类型
+	var a, b, c, s = 4, 5, true, "deftt" // 自动判断类型
 	fmt.Println(a, b, c, s)
 }
 
@@ -61,7 +61,7 @@ func consts() {
 	var c int
 	c = int(math.Sqrt(a*a + b*b)) // 这里如果没有定义类型,那么需要是什么类型,就可以当什么类型使用???
 	fmt.Println(filename, a, b, c)
-	//fmt.Printf("%s %d %s \n", a, a, b) // 但是当已经使用过一次,似乎这个变量类型就被定下来了.
+	// fmt.Printf("%s %d %s \n", a, a, b) // 但是当已经使用过一次,似乎这个变量类型就被定下来了.
 }
 
 // 枚举类型(并没有专用关键字)

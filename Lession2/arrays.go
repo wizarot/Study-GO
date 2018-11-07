@@ -50,7 +50,7 @@ func main() {
 	// 数组是值类型?
 	printArr(arr1)
 	printArr(arr3)
-	//printArr(arr2) // 数组参数长度不对了! 直接报参数错误
+	// printArr(arr2) // 数组参数长度不对了! 直接报参数错误
 	// 尝试修改数组中的值 ,再输出,那么结果是没变..
 	fmt.Println(arr1, arr3)
 

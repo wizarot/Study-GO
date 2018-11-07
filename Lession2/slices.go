@@ -52,13 +52,13 @@ func main() {
 	fmt.Printf("sa1=%v, len(sa1)=%d, cap(sa1)=%d\n", sa1, len(sa1), cap(sa1))
 	fmt.Printf("sa2=%v, len(sa2)=%d, cap(sa2)=%d\n", sa2, len(sa2), cap(sa2))
 
-	//添加元素
+	// 添加元素
 	fmt.Println("Append data:")
 	s3 := append(sa2, 10)
 	s4 := append(s3, 11)
 	s5 := append(s4, 12)
 	// s4 和 s5 会开一个新的数组,不是原来的arr1了!!
 	fmt.Println("s3 , s4 ,s5 =", s3, s4, s5)
-	fmt.Println("arr=",arr1)
+	fmt.Println("arr=", arr1)
 
 }
