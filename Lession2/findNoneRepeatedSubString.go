@@ -21,6 +21,7 @@ func lengthOfNonRepeatingSubStr(s string) int {
 
 /**
 找出最大长度不重复字串 leatcode著名问题你
+理解rune类型
  */
 func main() {
 	fmt.Println(lengthOfNonRepeatingSubStr("abcabcbb"))
@@ -32,4 +33,5 @@ func main() {
 	// 如果是中文呢?
 	fmt.Println(lengthOfNonRepeatingSubStr("这里是中文"))// 直接中文就不对了,因为遍历时被转为byte是会出问题的..
 	fmt.Println(lengthOfNonRepeatingSubStr("一二三二一"))// 将字符串类型转为rune来代替byte就正常了!
+	fmt.Println(lengthOfNonRepeatingSubStr("Yes我爱GO语言!🏀⚽⚡👄👍🔥"))// 看一下复杂版本
 }
