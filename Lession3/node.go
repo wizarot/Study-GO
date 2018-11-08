@@ -29,7 +29,14 @@ func createNode(value int) *treeNode {
 
 // 实现一个遍历各节点的函数
 func (node *treeNode)traverse()  {
+	// 防止nil节点情况
+	if node == nil {
+		return
+	}
 	// 中序遍历-先遍历左子树,再来右子树
+	node.left.traverse()
+	node.print()
+	node.right.traverse()
 }
 
 /**
@@ -37,6 +44,7 @@ func (node *treeNode)traverse()  {
 go仅支持封装,不支持继承和多态
 继承和多态使用面向接口编程来完成
 go语言没有class,只有struct
+如果包里面有指针接受者,那么建议全部都用指针接收者,这样可以保持一致性.
  */
 func main() {
 	// 新建node
@@ -64,7 +72,7 @@ func main() {
 	// go语言的指针操作特殊性
 	pRoot := &root
 	pRoot.print()
-	pRoot.setValue(100)
+	pRoot.setValue(4)
 	pRoot.print()
 	root.print()
 
@@ -72,5 +80,7 @@ func main() {
 	var nilNode *treeNode
 	nilNode.setValue(100)
 
-
+	fmt.Println("traverse tree:")
+	// 中序遍历root树
+	root.traverse()
 }
