@@ -6,6 +6,8 @@ import (
 	"os"
 	"bufio"
 	"time"
+	"io"
+	"strings"
 )
 
 // 计算1一直加到100
@@ -37,8 +39,12 @@ func printFile(filename string) {
 	if err != nil {
 		panic(err)
 	}
-	scanner := bufio.NewScanner(file)
+	printFileContants(file)
+}
 
+// 使用reader 对象可以传入各种允许的reader
+func printFileContants(reader io.Reader) {
+	scanner := bufio.NewScanner(reader)
 	for scanner.Scan() { // 没有初始条件,没有递增语句. 这样的写法就相当于while,因此go语言没有涉及while语法
 		fmt.Println(scanner.Text())
 	}
@@ -62,13 +68,21 @@ func forever() {
 func main() {
 
 	fmt.Println(sum())
-	fmt.Println(convertToBin(5), //101
-		convertToBin(13),        //1101
-		convertToBin(78348121),  //1101
-		convertToBin(0),         //1101
+	fmt.Println(convertToBin(5), // 101
+		convertToBin(13),        // 1101
+		convertToBin(78348121),  // 1101
+		convertToBin(0),         // 1101
 	)
 
 	printFile("/Users/will/go_productions/src/Study-GO/Lession1/abc.txt") // 需要根据实际地址手动更改!我这个项目就放这里了.
+	s := `sdhfjekjk  
+kdjkf
+skdjkfj
+aaa
+bbb
 
-	forever()
+中文
+`
+	printFileContants(strings.NewReader(s))
+	// forever()
 }

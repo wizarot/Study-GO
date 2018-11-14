@@ -39,6 +39,7 @@ func main() {
 }
 
 func inspect(r Retriver) {
+	// fmt.Println("Ret")
 	fmt.Printf("%T %v \n", r, r) // 显示下r是什么东西  %T显示变量类型, %v是变量值?
 	switch v := r.(type) {
 	case mooc.Retriever:
